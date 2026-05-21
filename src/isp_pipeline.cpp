@@ -8,6 +8,18 @@
 
 namespace
 {
+struct ChannelSample
+{
+    float value = 0.0f;
+    uchar saturationLevel = 0;
+};
+
+struct DemosaicResult
+{
+    cv::Mat bgr32;
+    cv::Mat saturationBgr;
+};
+
 float luminanceFromBgr(const cv::Vec3f &bgr)
 {
     const float r = std::max(0.0f, bgr[2]);
@@ -74,6 +86,65 @@ cv::Mat applyExtendedReinhardToneMap(const cv::Mat &linearBgr)
     return toneMapped;
 }
 
+void applyHighlightDesaturation(cv::Mat &linearBgr,
+                                const cv::Mat &saturationBgr)
+{
+    if (linearBgr.empty() || linearBgr.type() != CV_32FC3)
+    {
+        throw std::runtime_error(
+            "Invalid linear BGR image for highlight desaturation.");
+    }
+    if (saturationBgr.empty() || saturationBgr.type() != CV_8UC3 ||
+        saturationBgr.size() != linearBgr.size())
+    {
+        throw std::runtime_error(
+            "Invalid saturation mask for highlight desaturation.");
+    }
+
+    for (int y = 0; y < linearBgr.rows; ++y)
+    {
+        cv::Vec3f *row = linearBgr.ptr<cv::Vec3f>(y);
+        const cv::Vec3b *satRow = saturationBgr.ptr<cv::Vec3b>(y);
+
+        for (int x = 0; x < linearBgr.cols; ++x)
+        {
+            const cv::Vec3b &sat = satRow[x];
+            const int maxSaturationLevel =
+                std::max({static_cast<int>(sat[0]), static_cast<int>(sat[1]),
+                          static_cast<int>(sat[2])});
+            if (maxSaturationLevel == 0)
+            {
+                continue;
+            }
+
+            cv::Vec3f &bgr = row[x];
+            const float luminance = luminanceFromBgr(bgr);
+            const cv::Vec3f neutral(luminance, luminance, luminance);
+            const float strength =
+                std::clamp(static_cast<float>(maxSaturationLevel) / 4.0f,
+                           0.0f, 1.0f);
+
+            bgr = bgr * (1.0f - strength) + neutral * strength;
+        }
+    }
+}
+
+float fallbackSaturationLevel(int blackLevel, int whiteLevel)
+{
+    return static_cast<float>(blackLevel) +
+           static_cast<float>(whiteLevel - blackLevel) * 0.95f;
+}
+
+float saturationLevelForChannel(int bgrChannel,
+                                const cv::Vec3f &highlightLinearityLimitBgr,
+                                int blackLevel, int whiteLevel)
+{
+    const float metadataLimit = highlightLinearityLimitBgr[bgrChannel];
+    return metadataLimit > 0.0f
+               ? metadataLimit
+               : fallbackSaturationLevel(blackLevel, whiteLevel);
+}
+
 int bayerChannelAt(int y, int x, int bayerPattern)
 {
     const bool evenY = (y % 2 == 0);
@@ -130,11 +201,16 @@ int bayerChannelAt(int y, int x, int bayerPattern)
     }
 }
 
-float averageBayerChannel(const cv::Mat &wbRaw32, int y, int x,
-                          int targetChannel, int bayerPattern)
+ChannelSample averageReliableBayerChannel(const cv::Mat &wbRaw32,
+                                          const cv::Mat &saturationMask, int y,
+                                          int x, int targetChannel,
+                                          int bayerPattern)
 {
-    float sum = 0.0f;
-    int count = 0;
+    float reliableSum = 0.0f;
+    int reliableCount = 0;
+    float fallbackSum = 0.0f;
+    int fallbackCount = 0;
+    int saturatedCount = 0;
 
     for (int dy = -1; dy <= 1; ++dy)
     {
@@ -145,6 +221,7 @@ float averageBayerChannel(const cv::Mat &wbRaw32, int y, int x,
         }
 
         const float *row = wbRaw32.ptr<float>(yy);
+        const uchar *maskRow = saturationMask.ptr<uchar>(yy);
 
         for (int dx = -1; dx <= 1; ++dx)
         {
@@ -159,36 +236,76 @@ float averageBayerChannel(const cv::Mat &wbRaw32, int y, int x,
                 continue;
             }
 
-            sum += row[xx];
-            ++count;
+            fallbackSum += row[xx];
+            ++fallbackCount;
+
+            if (maskRow[xx] != 0)
+            {
+                ++saturatedCount;
+            }
+            else
+            {
+                reliableSum += row[xx];
+                ++reliableCount;
+            }
         }
     }
 
-    return count > 0 ? sum / static_cast<float>(count) : 0.0f;
+    const uchar saturationLevel =
+        fallbackCount > 0
+            ? static_cast<uchar>(
+                  std::clamp(static_cast<int>(std::lround(
+                                 4.0f * static_cast<float>(saturatedCount) /
+                                 static_cast<float>(fallbackCount))),
+                             0, 4))
+            : static_cast<uchar>(0);
+
+    if (reliableCount > 0)
+    {
+        return {reliableSum / static_cast<float>(reliableCount),
+                saturationLevel};
+    }
+
+    return {fallbackCount > 0 ? fallbackSum / static_cast<float>(fallbackCount)
+                              : 0.0f,
+            saturationLevel};
 }
 
-cv::Mat Demosaicing(const cv::Mat &wbRaw32, int bayerPattern)
+DemosaicResult
+Demosaicing(const cv::Mat &wbRaw32, const cv::Mat &saturationMask,
+            int bayerPattern) // TODO : implement other demosacing patterns
 {
     if (wbRaw32.empty() || wbRaw32.type() != CV_32FC1)
     {
         throw std::runtime_error("Invalid 32F Bayer image for demosaicing.");
     }
+    if (saturationMask.empty() || saturationMask.type() != CV_8UC1 ||
+        saturationMask.size() != wbRaw32.size())
+    {
+        throw std::runtime_error("Invalid saturation mask for demosaicing.");
+    }
 
     cv::Mat bgr32 = cv::Mat::zeros(wbRaw32.size(), CV_32FC3);
+    cv::Mat saturationBgr = cv::Mat::zeros(wbRaw32.size(), CV_8UC3);
 
     for (int y = 0; y < wbRaw32.rows; ++y)
     {
         cv::Vec3f *dst = bgr32.ptr<cv::Vec3f>(y);
+        cv::Vec3b *satDst = saturationBgr.ptr<cv::Vec3b>(y);
 
         for (int x = 0; x < wbRaw32.cols; ++x)
         {
-            dst[x][0] = averageBayerChannel(wbRaw32, y, x, 0, bayerPattern);
-            dst[x][1] = averageBayerChannel(wbRaw32, y, x, 1, bayerPattern);
-            dst[x][2] = averageBayerChannel(wbRaw32, y, x, 2, bayerPattern);
+            for (int channel = 0; channel < 3; ++channel)
+            {
+                const ChannelSample sample = averageReliableBayerChannel(
+                    wbRaw32, saturationMask, y, x, channel, bayerPattern);
+                dst[x][channel] = sample.value;
+                satDst[x][channel] = sample.saturationLevel;
+            }
         }
     }
 
-    return bgr32;
+    return {bgr32, saturationBgr};
 }
 } // namespace
 
@@ -196,7 +313,8 @@ cv::Mat ISPPipeline::makePreview(const cv::Mat &bayer16,
                                  const cv::Matx33f &rgbCam, int blackLevel,
                                  int whiteLevel, double gamma, int bayerPattern,
                                  float redGain, float greenGain, float blueGain,
-                                 int denoiser)
+                                 int denoiser,
+                                 cv::Vec3f highlightLinearityLimitBgr)
 {
     if (bayer16.empty() || bayer16.type() != CV_16UC1)
     {
@@ -206,16 +324,25 @@ cv::Mat ISPPipeline::makePreview(const cv::Mat &bayer16,
     // TODO : Implement active area crop
 
     cv::Mat normalized = cv::Mat::zeros(bayer16.size(), CV_32FC1);
+    cv::Mat saturationMask = cv::Mat::zeros(bayer16.size(), CV_8UC1);
 
     const float denom = std::max(1, whiteLevel - blackLevel);
     // Normalise and white balance in Bayer space.
     for (int y = 0; y < bayer16.rows; ++y)
     {
         const ushort *src = bayer16.ptr<ushort>(y);
+        uchar *sat = saturationMask.ptr<uchar>(y);
         float *dst = normalized.ptr<float>(y);
 
         for (int x = 0; x < bayer16.cols; ++x)
         {
+            const int bgrChannel = bayerChannelAt(y, x, bayerPattern);
+            const float saturationLevel = saturationLevelForChannel(
+                bgrChannel, highlightLinearityLimitBgr, blackLevel,
+                whiteLevel);
+            sat[x] =
+                static_cast<float>(src[x]) >= saturationLevel ? 1 : 0;
+
             const bool evenY = (y % 2 == 0);
             const bool evenX = (x % 2 == 0);
 
@@ -226,6 +353,7 @@ cv::Mat ISPPipeline::makePreview(const cv::Mat &bayer16,
 
             float channelGain = greenGain;
 
+            // WB
             switch (bayerPattern)
             {
             case 0: // RGGB -> R G / G B
@@ -283,7 +411,10 @@ cv::Mat ISPPipeline::makePreview(const cv::Mat &bayer16,
     }
 
     // Demosaicing to camera BGR (device BGR).
-    cv::Mat bgr32 = Demosaicing(normalized, bayerPattern);
+    DemosaicResult demosaicResult =
+        Demosaicing(normalized, saturationMask, bayerPattern);
+    cv::Mat bgr32 = demosaicResult.bgr32;
+    cv::Mat saturationBgr = demosaicResult.saturationBgr;
 
     cv::Mat correctedBgr(bgr32.size(), CV_32FC3);
 
@@ -332,6 +463,8 @@ cv::Mat ISPPipeline::makePreview(const cv::Mat &bayer16,
     {
         denoisedImg = correctedBgr;
     }
+
+    applyHighlightDesaturation(denoisedImg, saturationBgr);
 
     // Tone mapping before gamma correction.
     denoisedImg *= pow(2.0f, 1);

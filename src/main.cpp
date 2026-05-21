@@ -75,6 +75,10 @@ int main(int argc, char **argv)
         std::cout << "Size: " << raw.width << " x " << raw.height << std::endl;
         std::cout << "Black level: " << raw.blackLevel << std::endl;
         std::cout << "White level: " << raw.whiteLevel << std::endl;
+        std::cout << "Highlight linearity limit (B/G/R): "
+                  << raw.highlightLinearityLimitBgr[0] << " / "
+                  << raw.highlightLinearityLimitBgr[1] << " / "
+                  << raw.highlightLinearityLimitBgr[2] << std::endl;
         std::cout << "As-shot WB (R/G/B): " << raw.wbRed << " / " << raw.wbGreen
                   << " / " << raw.wbBlue << std::endl;
 
@@ -102,7 +106,8 @@ int main(int argc, char **argv)
 
         cv::Mat preview = ISPPipeline::makePreview(
             raw.bayer16, raw.rgbCam, raw.blackLevel, raw.whiteLevel, 2.2,
-            raw.bayerPattern, raw.wbRed, raw.wbGreen, raw.wbBlue, 1);
+            raw.bayerPattern, raw.wbRed, raw.wbGreen, raw.wbBlue, 1,
+            raw.highlightLinearityLimitBgr);
         saveImg(rawPath, preview);
 
         cv::resizeWindow(kPreviewWindowName, preview.cols, preview.rows);

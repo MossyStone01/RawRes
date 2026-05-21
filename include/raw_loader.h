@@ -15,6 +15,8 @@ struct RawImageData
     float wbGreen = 1.0f;
     float wbBlue = 1.0f;
     cv::Matx33f rgbCam;
+    cv::Vec3f highlightLinearityLimitBgr = cv::Vec3f(0.0f, 0.0f, 0.0f);
+    cv::Mat saturationMask;
 };
 
 class RawLoader

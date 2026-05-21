@@ -42,6 +42,26 @@ RawImageData RawLoader::load(const std::string &path)
     int c01 = rawProcessor.COLOR(top, left + 1);
     int bayerPattern;
 
+    int blackLevel = rawProcessor.imgdata.color.black;
+    int whiteLevel = rawProcessor.imgdata.color.maximum;
+    const float *camMul = rawProcessor.imgdata.color.cam_mul;
+    const unsigned *linearMax = rawProcessor.imgdata.color.linear_max;
+    const float fallbackSaturationLevel =
+        static_cast<float>(blackLevel) +
+        static_cast<float>(whiteLevel - blackLevel) * 0.95f;
+    const float green1Limit =
+        linearMax[1] > 0 ? static_cast<float>(linearMax[1]) : 0.0f;
+    const float green2Limit =
+        linearMax[3] > 0 ? static_cast<float>(linearMax[3]) : 0.0f;
+    const float greenLimit =
+        green1Limit > 0.0f && green2Limit > 0.0f
+            ? std::min(green1Limit, green2Limit)
+            : std::max(green1Limit, green2Limit);
+    const cv::Vec3f highlightLinearityLimitBgr(
+        linearMax[2] > 0 ? static_cast<float>(linearMax[2]) : 0.0f,
+        greenLimit,
+        linearMax[0] > 0 ? static_cast<float>(linearMax[0]) : 0.0f);
+
     if (cdesc[c00] == 'R')
     {
         bayerPattern = 0; // RGGB
@@ -63,6 +83,7 @@ RawImageData RawLoader::load(const std::string &path)
     }
 
     cv::Mat bayer(height, width, CV_16UC1);
+    cv::Mat saturationMask = cv::Mat::zeros(height, width, CV_8UC1);
 
     ushort *rawData = rawProcessor.imgdata.rawdata.raw_image;
     if (!rawData)
@@ -75,22 +96,25 @@ RawImageData RawLoader::load(const std::string &path)
     {
 
         ushort *dst = bayer.ptr<ushort>(y);
+        uchar *satMask = saturationMask.ptr<uchar>(y);
 
         for (int x = 0; x < width; ++x)
 
         {
-
             int rawX = x + left;
 
             int rawY = y + top;
 
             dst[x] = rawData[rawY * rawWidth + rawX];
+            const int rawChannel = rawProcessor.COLOR(rawY, rawX);
+            const float saturationLevel =
+                linearMax[rawChannel] > 0
+                    ? static_cast<float>(linearMax[rawChannel])
+                    : fallbackSaturationLevel;
+            satMask[x] =
+                static_cast<float>(dst[x]) >= saturationLevel ? 1 : 0;
         }
     }
-
-    int blackLevel = rawProcessor.imgdata.color.black;
-    int whiteLevel = rawProcessor.imgdata.color.maximum;
-    const float *camMul = rawProcessor.imgdata.color.cam_mul;
 
     float wbRed = 1.0f;
     float wbGreen = 1.0f;
@@ -118,6 +142,8 @@ RawImageData RawLoader::load(const std::string &path)
     result.wbRed = wbRed;
     result.wbGreen = wbGreen;
     result.wbBlue = wbBlue;
+    result.highlightLinearityLimitBgr = highlightLinearityLimitBgr;
+    result.saturationMask = saturationMask;
 
     for (int i = 0; i < 3; ++i)
     {
