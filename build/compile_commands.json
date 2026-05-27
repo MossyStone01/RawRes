@@ -19,6 +19,48 @@
 },
 {
   "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
+  "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp",
+  "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp",
+  "output": "CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o"
+},
+{
+  "directory": "/Users/leejeongmin/Desktop/Developement/RawRes/build",
   "command": "/usr/bin/c++  -I/Users/leejeongmin/Desktop/Developement/RawRes/include -I/opt/homebrew/include -isystem /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4 -std=c++17 -o CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/bm3d.cpp",
   "file": "/Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/bm3d.cpp",
   "output": "CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o"

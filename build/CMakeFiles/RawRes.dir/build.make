@@ -114,10 +114,108 @@ CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_pipeline.cpp -o CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.s
 
+CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp > CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/bayer_pattern.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp > CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/color_correction.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp > CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/demosaic.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp > CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/denoise.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp > CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/output_encoding.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp > CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/raw_preprocess.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.s
+
+CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o: CMakeFiles/RawRes.dir/flags.make
+CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp
+CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o -MF CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o.d -o CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp
+
+CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp > CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.i
+
+CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/leejeongmin/Desktop/Developement/RawRes/src/isp_stages/tone_mapping.cpp -o CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.s
+
 CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o: CMakeFiles/RawRes.dir/flags.make
 CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/bm3d.cpp
 CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o -MF CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o.d -o CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/bm3d.cpp
 
 CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.i: cmake_force
@@ -131,7 +229,7 @@ CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.s: cmake_force
 CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o: CMakeFiles/RawRes.dir/flags.make
 CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o: /Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/guided_filter.cpp
 CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o: CMakeFiles/RawRes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o -MF CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o.d -o CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o -c /Users/leejeongmin/Desktop/Developement/RawRes/src/noise_removal/guided_filter.cpp
 
 CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.i: cmake_force
@@ -147,6 +245,13 @@ RawRes_OBJECTS = \
 "CMakeFiles/RawRes.dir/src/main.cpp.o" \
 "CMakeFiles/RawRes.dir/src/raw_loader.cpp.o" \
 "CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o" \
+"CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o" \
 "CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o" \
 "CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o"
 
@@ -156,6 +261,13 @@ RawRes_EXTERNAL_OBJECTS =
 RawRes: CMakeFiles/RawRes.dir/src/main.cpp.o
 RawRes: CMakeFiles/RawRes.dir/src/raw_loader.cpp.o
 RawRes: CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o
+RawRes: CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o
 RawRes: CMakeFiles/RawRes.dir/src/noise_removal/bm3d.cpp.o
 RawRes: CMakeFiles/RawRes.dir/src/noise_removal/guided_filter.cpp.o
 RawRes: CMakeFiles/RawRes.dir/build.make
@@ -217,7 +329,7 @@ RawRes: /opt/homebrew/lib/libopencv_photo.4.13.0.dylib
 RawRes: /opt/homebrew/lib/libopencv_imgproc.4.13.0.dylib
 RawRes: /opt/homebrew/lib/libopencv_core.4.13.0.dylib
 RawRes: CMakeFiles/RawRes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable RawRes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/leejeongmin/Desktop/Developement/RawRes/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable RawRes"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RawRes.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

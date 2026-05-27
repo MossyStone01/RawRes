@@ -153,6 +153,174 @@ src/isp_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.s
 .PHONY : src/isp_pipeline.cpp.s
 
+src/isp_stages/bayer_pattern.o: src/isp_stages/bayer_pattern.cpp.o
+.PHONY : src/isp_stages/bayer_pattern.o
+
+# target to build an object file
+src/isp_stages/bayer_pattern.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.o
+.PHONY : src/isp_stages/bayer_pattern.cpp.o
+
+src/isp_stages/bayer_pattern.i: src/isp_stages/bayer_pattern.cpp.i
+.PHONY : src/isp_stages/bayer_pattern.i
+
+# target to preprocess a source file
+src/isp_stages/bayer_pattern.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.i
+.PHONY : src/isp_stages/bayer_pattern.cpp.i
+
+src/isp_stages/bayer_pattern.s: src/isp_stages/bayer_pattern.cpp.s
+.PHONY : src/isp_stages/bayer_pattern.s
+
+# target to generate assembly for a file
+src/isp_stages/bayer_pattern.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/bayer_pattern.cpp.s
+.PHONY : src/isp_stages/bayer_pattern.cpp.s
+
+src/isp_stages/color_correction.o: src/isp_stages/color_correction.cpp.o
+.PHONY : src/isp_stages/color_correction.o
+
+# target to build an object file
+src/isp_stages/color_correction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.o
+.PHONY : src/isp_stages/color_correction.cpp.o
+
+src/isp_stages/color_correction.i: src/isp_stages/color_correction.cpp.i
+.PHONY : src/isp_stages/color_correction.i
+
+# target to preprocess a source file
+src/isp_stages/color_correction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.i
+.PHONY : src/isp_stages/color_correction.cpp.i
+
+src/isp_stages/color_correction.s: src/isp_stages/color_correction.cpp.s
+.PHONY : src/isp_stages/color_correction.s
+
+# target to generate assembly for a file
+src/isp_stages/color_correction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/color_correction.cpp.s
+.PHONY : src/isp_stages/color_correction.cpp.s
+
+src/isp_stages/demosaic.o: src/isp_stages/demosaic.cpp.o
+.PHONY : src/isp_stages/demosaic.o
+
+# target to build an object file
+src/isp_stages/demosaic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.o
+.PHONY : src/isp_stages/demosaic.cpp.o
+
+src/isp_stages/demosaic.i: src/isp_stages/demosaic.cpp.i
+.PHONY : src/isp_stages/demosaic.i
+
+# target to preprocess a source file
+src/isp_stages/demosaic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.i
+.PHONY : src/isp_stages/demosaic.cpp.i
+
+src/isp_stages/demosaic.s: src/isp_stages/demosaic.cpp.s
+.PHONY : src/isp_stages/demosaic.s
+
+# target to generate assembly for a file
+src/isp_stages/demosaic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/demosaic.cpp.s
+.PHONY : src/isp_stages/demosaic.cpp.s
+
+src/isp_stages/denoise.o: src/isp_stages/denoise.cpp.o
+.PHONY : src/isp_stages/denoise.o
+
+# target to build an object file
+src/isp_stages/denoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.o
+.PHONY : src/isp_stages/denoise.cpp.o
+
+src/isp_stages/denoise.i: src/isp_stages/denoise.cpp.i
+.PHONY : src/isp_stages/denoise.i
+
+# target to preprocess a source file
+src/isp_stages/denoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.i
+.PHONY : src/isp_stages/denoise.cpp.i
+
+src/isp_stages/denoise.s: src/isp_stages/denoise.cpp.s
+.PHONY : src/isp_stages/denoise.s
+
+# target to generate assembly for a file
+src/isp_stages/denoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/denoise.cpp.s
+.PHONY : src/isp_stages/denoise.cpp.s
+
+src/isp_stages/output_encoding.o: src/isp_stages/output_encoding.cpp.o
+.PHONY : src/isp_stages/output_encoding.o
+
+# target to build an object file
+src/isp_stages/output_encoding.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.o
+.PHONY : src/isp_stages/output_encoding.cpp.o
+
+src/isp_stages/output_encoding.i: src/isp_stages/output_encoding.cpp.i
+.PHONY : src/isp_stages/output_encoding.i
+
+# target to preprocess a source file
+src/isp_stages/output_encoding.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.i
+.PHONY : src/isp_stages/output_encoding.cpp.i
+
+src/isp_stages/output_encoding.s: src/isp_stages/output_encoding.cpp.s
+.PHONY : src/isp_stages/output_encoding.s
+
+# target to generate assembly for a file
+src/isp_stages/output_encoding.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/output_encoding.cpp.s
+.PHONY : src/isp_stages/output_encoding.cpp.s
+
+src/isp_stages/raw_preprocess.o: src/isp_stages/raw_preprocess.cpp.o
+.PHONY : src/isp_stages/raw_preprocess.o
+
+# target to build an object file
+src/isp_stages/raw_preprocess.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.o
+.PHONY : src/isp_stages/raw_preprocess.cpp.o
+
+src/isp_stages/raw_preprocess.i: src/isp_stages/raw_preprocess.cpp.i
+.PHONY : src/isp_stages/raw_preprocess.i
+
+# target to preprocess a source file
+src/isp_stages/raw_preprocess.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.i
+.PHONY : src/isp_stages/raw_preprocess.cpp.i
+
+src/isp_stages/raw_preprocess.s: src/isp_stages/raw_preprocess.cpp.s
+.PHONY : src/isp_stages/raw_preprocess.s
+
+# target to generate assembly for a file
+src/isp_stages/raw_preprocess.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/raw_preprocess.cpp.s
+.PHONY : src/isp_stages/raw_preprocess.cpp.s
+
+src/isp_stages/tone_mapping.o: src/isp_stages/tone_mapping.cpp.o
+.PHONY : src/isp_stages/tone_mapping.o
+
+# target to build an object file
+src/isp_stages/tone_mapping.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.o
+.PHONY : src/isp_stages/tone_mapping.cpp.o
+
+src/isp_stages/tone_mapping.i: src/isp_stages/tone_mapping.cpp.i
+.PHONY : src/isp_stages/tone_mapping.i
+
+# target to preprocess a source file
+src/isp_stages/tone_mapping.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.i
+.PHONY : src/isp_stages/tone_mapping.cpp.i
+
+src/isp_stages/tone_mapping.s: src/isp_stages/tone_mapping.cpp.s
+.PHONY : src/isp_stages/tone_mapping.s
+
+# target to generate assembly for a file
+src/isp_stages/tone_mapping.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RawRes.dir/build.make CMakeFiles/RawRes.dir/src/isp_stages/tone_mapping.cpp.s
+.PHONY : src/isp_stages/tone_mapping.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -261,6 +429,27 @@ help:
 	@echo "... src/isp_pipeline.o"
 	@echo "... src/isp_pipeline.i"
 	@echo "... src/isp_pipeline.s"
+	@echo "... src/isp_stages/bayer_pattern.o"
+	@echo "... src/isp_stages/bayer_pattern.i"
+	@echo "... src/isp_stages/bayer_pattern.s"
+	@echo "... src/isp_stages/color_correction.o"
+	@echo "... src/isp_stages/color_correction.i"
+	@echo "... src/isp_stages/color_correction.s"
+	@echo "... src/isp_stages/demosaic.o"
+	@echo "... src/isp_stages/demosaic.i"
+	@echo "... src/isp_stages/demosaic.s"
+	@echo "... src/isp_stages/denoise.o"
+	@echo "... src/isp_stages/denoise.i"
+	@echo "... src/isp_stages/denoise.s"
+	@echo "... src/isp_stages/output_encoding.o"
+	@echo "... src/isp_stages/output_encoding.i"
+	@echo "... src/isp_stages/output_encoding.s"
+	@echo "... src/isp_stages/raw_preprocess.o"
+	@echo "... src/isp_stages/raw_preprocess.i"
+	@echo "... src/isp_stages/raw_preprocess.s"
+	@echo "... src/isp_stages/tone_mapping.o"
+	@echo "... src/isp_stages/tone_mapping.i"
+	@echo "... src/isp_stages/tone_mapping.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

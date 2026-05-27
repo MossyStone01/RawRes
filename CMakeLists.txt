@@ -34,6 +34,13 @@ add_executable(RawRes
     src/main.cpp
     src/raw_loader.cpp
     src/isp_pipeline.cpp
+    src/isp_stages/bayer_pattern.cpp
+    src/isp_stages/color_correction.cpp
+    src/isp_stages/demosaic.cpp
+    src/isp_stages/denoise.cpp
+    src/isp_stages/output_encoding.cpp
+    src/isp_stages/raw_preprocess.cpp
+    src/isp_stages/tone_mapping.cpp
     src/noise_removal/bm3d.cpp
     src/noise_removal/guided_filter.cpp
 )

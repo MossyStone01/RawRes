@@ -946,4 +946,9 @@ CMakeFiles/RawRes.dir/src/isp_pipeline.cpp.o: \
   /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4/opencv2/video.hpp \
   /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4/opencv2/video/tracking.hpp \
   /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4/opencv2/video/background_segm.hpp \
-  /Users/leejeongmin/Desktop/Developement/RawRes/include/noise_removal/guided_filter.h
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/color_correction.h \
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/demosaic.h \
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/denoise.h \
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/output_encoding.h \
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/raw_preprocess.h \
+  /Users/leejeongmin/Desktop/Developement/RawRes/include/isp_stages/tone_mapping.h
